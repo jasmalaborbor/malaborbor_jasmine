@@ -56,7 +56,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | LavaLust Version
 | -------------------------------------------------------------------
 */
-$config['VERSION']                 = '4.2.4';
+$config['VERSION']                 = '4.2.2';
 
 /*
 | -------------------------------------------------------------------
@@ -90,7 +90,7 @@ $config['base_url'] 				= '';
 | variable to blank.
 |
 */
-$config['index_page']               = '';
+$config['index_page']               = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

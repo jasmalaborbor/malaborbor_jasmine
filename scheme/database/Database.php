@@ -249,7 +249,7 @@ class Database {
     /**
      * Get Database Instance
      *
-     * @return Database
+     * @return instance
      */
     public static function instance($dbname)
     {
@@ -313,7 +313,7 @@ class Database {
                 return $stmt->rowCount();
             }
         } catch (Exception $e) {
-            throw new PDOException($e->getMessage() . 'Query: ' . $this->getSQL . '');
+            throw new PDOException($e->getMessage() . '<div style="background-color:#000;color:#fff;padding:15px">Query: ' . $this->getSQL . '</div>');
         }
     }
 
@@ -1142,7 +1142,7 @@ class Database {
 
         $this->limit = ' LIMIT '.$offset.', '.$records_per_page;
 
-        return null;
+        return $this;
     }
 
     /**

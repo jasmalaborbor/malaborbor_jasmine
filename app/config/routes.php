@@ -43,13 +43,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'ProfilelController::index');
-$router->match('create', 'ProfilelController::create', ['get', 'post']);
-$router->match('edit/{id}', 'ProfilelController::edits', ['get', 'post']);
-$router->get('delete/{id}', 'ProfilelController::delete');
-$router->match('/create', 'CrudController::create', ['get', 'post']);
-$router->match('/edit/{id}', 'CrudController::edits', ['get', 'post']);
-$router->get('/delete/{id}', 'CrudController::delete');
-$router->get('/login', 'AuthController::index');
-$router->get('/', 'SampleController::view');
-
+$router->get('/', 'UserController::index');
+$router->match('/user/create', 'UserController::create', ['GET', 'POST']);
+$router->match('/user/update/{id}', 'UserController::update', ['GET', 'POST']);
+$router->get('/user/delete/{id}', 'UserController::delete');
