@@ -106,7 +106,7 @@
   </style>
 </head>
 <body>
-  <h1>👥 User Management</h1>
+  <h1> User Management</h1>
 
   <div style="width: 85%; margin: 0 auto 25px auto; text-align: right;">
     <a href="<?= site_url('user/create'); ?>" class="create-btn">+ Create New User</a>
