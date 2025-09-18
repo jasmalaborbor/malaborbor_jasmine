@@ -43,6 +43,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
+$router->get('/', 'ProfilelController::index');
 $router->match('create-profile', 'ProfileController::create', ['get', 'post']);
 $router->match('edit-profile/{id}', 'ProfileController::edits', ['get', 'post']);
 $router->get('delete-profile/{id}', 'ProfileController::delete');
