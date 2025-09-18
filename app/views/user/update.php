@@ -88,7 +88,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>🌸 Update User 🌸</h1>
+        <h1> Update User </h1>
         <form method="post" action="<?= site_url('user/update/'.$user['id']) ?>">
             <label for="username">👩 Username:</label>
             <input type="text" name="username" id="username" value="<?= html_escape($user['username']) ?>" required>
