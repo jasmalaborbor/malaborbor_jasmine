@@ -47,9 +47,4 @@ $router->get('/', 'ProfilelController::index');
 $router->match('create', 'ProfilelController::create', ['get', 'post']);
 $router->match('edit/{id}', 'ProfilelController::edits', ['get', 'post']);
 $router->get('delete/{id}', 'ProfilelController::delete');
-$router->match('/create', 'CrudController::create', ['get', 'post']);
-$router->match('/edit/{id}', 'CrudController::edits', ['get', 'post']);
-$router->get('/delete/{id}', 'CrudController::delete');
-$router->get('/login', 'AuthController::index');
-$router->get('/', 'SampleController::view');
-
+ 
