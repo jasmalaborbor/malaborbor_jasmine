@@ -1,138 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View</title>
-    <style>
-        body {
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
-            margin: 0;
-            padding: 20px;
-            color: #444;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User View</title>
+  <style>
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fb;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 6px rgba(255, 105, 180, 0.5);
-            color: #b83280;
-        }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
 
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-            border-radius: 15px;
-            overflow: hidden;
-            background: #fff;
-            color: #555;
-        }
+    .create-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 100, 200, 0.25);
+      transition: all 0.3s ease;
+    }
 
-        th, td {
-            padding: 15px 20px;
-            text-align: center;
-        }
+    .create-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 100, 200, 0.35);
+    }
 
-        th {
-            background: linear-gradient(135deg, #fbc2eb, #a18cd1);
-            color: white;
-            font-size: 18px;
-        }
+    table {
+      width: 85%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-        tr {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    th, td {
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 15px;
+    }
 
-        tr:nth-child(even) {
-            background: #ffe6f2;
-        }
+    th {
+      background: #2c3e50;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
 
-        tr:nth-child(odd) {
-            background: #fff0f5;
-        }
+    tr:nth-child(even) {
+      background: #f9fbfd;
+    }
 
-        tr:hover {
-            transform: scale(1.02);
-            box-shadow: 0px 5px 15px rgba(255,105,180,0.4);
-            background: #ffd6e8;
-        }
+    tr:hover {
+      background: #eaf3ff;
+      transition: 0.3s;
+    }
 
-        a {
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .action-btn {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-        a[href*="update"] {
-            background: #ff80bf;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
+    .edit-btn {
+      background: #00c6ff;
+      color: #fff;
+      margin-right: 8px;
+      box-shadow: 0 2px 6px rgba(0, 198, 255, 0.3);
+    }
 
-        a[href*="update"]:hover {
-            background: #e75480;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255,105,180,0.5);
-        }
+    .edit-btn:hover {
+      background: #0096cc;
+    }
 
-        a[href*="delete"] {
-            background: #ff4d6d;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
+    .delete-btn {
+      background: #ff4d6d;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(255, 77, 109, 0.3);
+    }
 
-        a[href*="delete"]:hover {
-            background: #d6336c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255,0,102,0.4);
-        }
-    </style>
+    .delete-btn:hover {
+      background: #d6336c;
+    }
+  </style>
 </head>
 <body>
-    <h1>🌸 Welcome to User Page 🌸</h1>
-    
-    <div style="width: 80%; margin: 0 auto 30px auto; text-align: right;">
-        <a href="<?= site_url('user/create'); ?>" style="
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            display: inline-block;
-        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 12px rgba(255,105,180,0.5)'" 
-           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.2)'">
-            ✨ + Create New User ✨
-        </a>
-    </div>
-    
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Action</th>
-        </tr>
+  <h1>👥 User Management</h1>
 
-        <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= $user['id']; ?></td>
-                <td><?= $user['username']; ?></td>
-                <td><?= $user['email']; ?></td>
-                <td>
-                    <a href="<?= site_url('user/update/'.$user['id']); ?>">Edit</a> |
-                    <a href="<?= site_url('user/delete/'.$user['id']); ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+  <div style="width: 85%; margin: 0 auto 25px auto; text-align: right;">
+    <a href="<?= site_url('user/create'); ?>" class="create-btn">+ Create New User</a>
+  </div>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+
+    <?php foreach ($users as $user): ?>
+      <tr>
+        <td><?= $user['id']; ?></td>
+        <td><?= $user['username']; ?></td>
+        <td><?= $user['email']; ?></td>
+        <td>
+          <a href="<?= site_url('user/update/'.$user['id']); ?>" class="action-btn edit-btn">Edit</a>
+          <a href="<?= site_url('user/delete/'.$user['id']); ?>" class="action-btn delete-btn"
+             onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+        </td>
+      </tr>
+    <?php endforeach; ?>
+  </table>
 </body>
 </html>
