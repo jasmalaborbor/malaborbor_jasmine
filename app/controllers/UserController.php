@@ -14,7 +14,7 @@ class UserController extends Controller {
 
     public function index()
     {
-        $data['users'] = $this->UserModel->all();
+        $data['student'] = $this->UserModel->all();
         $this->call->view('user/view', $data);    
     }
     public function create()
