@@ -38,7 +38,7 @@ class UserController extends Controller {
     public function update($id)
     {
 
-    $data['user'] = $this->UserModel->find($id);
+    $data['users'] = $this->UserModel->find($id);
 
     if ($this->io->method() == 'post') {    
         $data = [
