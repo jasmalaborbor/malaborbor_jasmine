@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f3f7;
+      background: #e6f4ea; /* light green background */
       margin: 0;
       padding: 0;
       display: flex;
@@ -17,11 +17,11 @@
     }
 
     .form-container {
-      background: #f0f3f7;
+      background: #e6f4ea;
       padding: 40px;
       border-radius: 25px;
       width: 380px;
-      box-shadow: 8px 8px 20px #c9d6df, -8px -8px 20px #ffffff;
+      box-shadow: 8px 8px 20px #b8c9be, -8px -8px 20px #ffffff;
       animation: fadeIn 0.6s ease-in-out;
     }
 
@@ -30,7 +30,7 @@
       margin-bottom: 25px;
       font-size: 24px;
       font-weight: 600;
-      color: #333;
+      color: #1e3d2f; /* dark green heading */
     }
 
     label {
@@ -38,7 +38,7 @@
       display: block;
       margin-top: 15px;
       margin-bottom: 6px;
-      color: #555;
+      color: #2e5c46; /* darker green labels */
     }
 
     input[type="text"], input[type="email"] {
@@ -47,35 +47,36 @@
       border: none;
       border-radius: 15px;
       outline: none;
-      background: #f0f3f7;
-      box-shadow: inset 4px 4px 8px #c9d6df, inset -4px -4px 8px #ffffff;
+      background: #e6f4ea;
+      box-shadow: inset 4px 4px 8px #b8c9be, inset -4px -4px 8px #ffffff;
       font-size: 15px;
       transition: all 0.3s ease;
-      color: #333;
+      color: #1e3d2f; /* dark green text */
     }
 
     input[type="text"]:focus, input[type="email"]:focus {
-      box-shadow: inset 2px 2px 6px #c9d6df, inset -2px -2px 6px #ffffff;
+      box-shadow: inset 2px 2px 6px #b8c9be, inset -2px -2px 6px #ffffff;
     }
 
     input[type="submit"] {
       margin-top: 30px;
       width: 100%;
       padding: 14px;
-      background: #f0f3f7;
-      color: #333;
+      background: #1e3d2f; /* dark green button */
+      color: #e6f4ea; /* light text */
       font-size: 16px;
       font-weight: 600;
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 6px 6px 12px #c9d6df, -6px -6px 12px #ffffff;
+      box-shadow: 6px 6px 12px #b8c9be, -6px -6px 12px #ffffff;
       transition: all 0.3s ease;
     }
 
     input[type="submit"]:hover {
       transform: translateY(-2px);
-      box-shadow: 4px 4px 10px #c9d6df, -4px -4px 10px #ffffff;
+      background: #2e5c46; /* slightly lighter dark green */
+      box-shadow: 4px 4px 10px rgba(30, 61, 47, 0.4), -4px -4px 10px #ffffff;
     }
 
     @keyframes fadeIn {
@@ -94,7 +95,7 @@
       <label for="email">Email:</label>
       <input type="email" name="email" id="email" value="<?= html_escape($user['email']) ?>" required>
 
-      <input type="submit" value="Update User">
+      <input type="submit" value="Update">
     </form>
   </div>
 </body>

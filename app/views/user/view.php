@@ -7,10 +7,10 @@
   <style>
     body {
       font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fb;
+      background: #e6f4ea; /* light green */
       margin: 0;
       padding: 20px;
-      color: #333;
+      color: #1e3d2f; /* dark green text */
     }
 
     h1 {
@@ -18,36 +18,38 @@
       margin-bottom: 30px;
       font-size: 28px;
       font-weight: 600;
-      color: #2c3e50;
+      color: #1e3d2f;
     }
 
     .create-btn {
       display: inline-block;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      background: linear-gradient(135deg, #1e3d2f, #2e5c46); /* green gradient */
       color: white;
       padding: 12px 24px;
       border-radius: 30px;
       font-weight: bold;
       font-size: 15px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 100, 200, 0.25);
+      box-shadow: 0 4px 12px rgba(30, 61, 47, 0.3);
       transition: all 0.3s ease;
     }
 
     .create-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 100, 200, 0.35);
+      background: #2e5c46;
+      box-shadow: 0 6px 16px rgba(30, 61, 47, 0.45);
     }
 
     table {
       width: 85%;
       margin: 0 auto;
       border-collapse: collapse;
-      background: #fff;
+      background: #ffffff;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease-in-out;
     }
 
     th, td {
@@ -57,7 +59,7 @@
     }
 
     th {
-      background: #2c3e50;
+      background: #1e3d2f; /* dark green */
       color: #fff;
       text-transform: uppercase;
       font-size: 14px;
@@ -65,11 +67,15 @@
     }
 
     tr:nth-child(even) {
-      background: #f9fbfd;
+      background: #f0f9f3; /* very light green */
+    }
+
+    tr:nth-child(odd) {
+      background: #ffffff;
     }
 
     tr:hover {
-      background: #eaf3ff;
+      background: #d9f2e1; /* hover green */
       transition: 0.3s;
     }
 
@@ -84,29 +90,34 @@
     }
 
     .edit-btn {
-      background: #00c6ff;
+      background: #2e7d32; /* leafy green */
       color: #fff;
       margin-right: 8px;
-      box-shadow: 0 2px 6px rgba(0, 198, 255, 0.3);
+      box-shadow: 0 2px 6px rgba(46, 125, 50, 0.3);
     }
 
     .edit-btn:hover {
-      background: #0096cc;
+      background: #256428;
     }
 
     .delete-btn {
-      background: #ff4d6d;
+      background: #e53935; /* red for delete */
       color: #fff;
-      box-shadow: 0 2px 6px rgba(255, 77, 109, 0.3);
+      box-shadow: 0 2px 6px rgba(229, 57, 53, 0.3);
     }
 
     .delete-btn:hover {
-      background: #d6336c;
+      background: #b71c1c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <h1> User Management</h1>
+  <h1> Welcome to Profile View</h1>
 
   <div style="width: 85%; margin: 0 auto 25px auto; text-align: right;">
     <a href="<?= site_url('user/create'); ?>" class="create-btn">+ Create New User</a>
