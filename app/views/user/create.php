@@ -88,15 +88,15 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>🌸 Create New User 🌸</h1>
+        <h1> Create New User </h1>
         <form method="post" action="">
-            <label for="username">👩 Username:</label>
+            <label for="username"> Username:</label>
             <input type="text" name="username" id="username" required>
 
-            <label for="email">📧 Email:</label>
+            <label for="email"> Email:</label>
             <input type="email" name="email" id="email" required>
 
-            <input type="submit" value="✨ Create User ✨">
+            <input type="submit" value="Create New User">
         </form>
     </div>
 </body>

@@ -14,8 +14,8 @@ class UserController extends Controller {
 
     public function index()
     {
-        $data['student'] = $this->UserModel->all();
-        $this->call->view('student/view', $data);    
+        $data['users'] = $this->UserModel->all();
+        $this->call->view('user/view', $data);    
     }
     public function create()
     {
@@ -32,13 +32,13 @@ class UserController extends Controller {
             redirect('/');
             
         }else {
-            $this->call->view('student/create');
+            $this->call->view('user/create');
         }
     }
     public function update($id)
     {
 
-    $data['student'] = $this->UserModel->find($id);
+    $data['user'] = $this->UserModel->find($id);
 
     if ($this->io->method() == 'post') {    
         $data = [
@@ -50,7 +50,7 @@ class UserController extends Controller {
 
         redirect('/');
     } else {
-        $this->call->view('student/update', $data);
+        $this->call->view('user/update', $data);
     }
     }
     public function delete($id)
