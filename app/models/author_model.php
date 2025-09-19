@@ -1,7 +1,7 @@
 <?php
     defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-    class UserModel extends Model {
+    class author_model extends Model {
         
         protected $table = '';
         protected $primary_key = 'id';
