@@ -19,7 +19,7 @@
         <input class="form-control me-2" name="q" type="text" placeholder="Search" value="<?=html_escape($q);?>">
         <button type="submit" class="btn btn-primary" type="button">Search</button>
 	</form>
-	<h2>Author Lists</h2>
+	<h2>Students Lists</h2>
 	<table class="table table-striped">
 		<thead>
 		<tr>
