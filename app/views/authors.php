@@ -8,137 +8,94 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<style>
 		body {
-			background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+			background-color: #204080;
 			font-family: 'Inter', sans-serif;
-			min-height: 100vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 2rem;
-		}
-		.container {
-			max-width: 1000px;
-			width: 100%;
-		}
-		h2 {
-			text-align: center;
-			font-weight: 700;
-			color: #b83b9f;
-			margin-bottom: 1.5rem;
+			min-height: 100vh;
+			margin: 0;
 		}
 		.card {
-			border: none;
+			width: 100%;
+			max-width: 800px;
+			background-color: #ffffff;
 			border-radius: 20px;
-			box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-			overflow: hidden;
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+			padding: 2rem;
+		}
+		h3 {
+			text-align: center;
+			color: #204080;
+			margin-bottom: 1.5rem;
+			font-weight: 600;
 		}
 		.table thead {
-			background: linear-gradient(135deg, #c471f5, #fa71cd);
-			color: white;
-			text-align: center;
-		}
-		.table tbody tr {
-			text-align: center;
+			background-color: #f1f1f1;
+			font-weight: 600;
 		}
 		.table-hover tbody tr:hover {
-			background-color: rgba(250, 113, 205, 0.05);
-			transition: 0.2s ease;
-		}
-		.btn-action {
-			border: none;
-			border-radius: 25px;
-			padding: 6px 16px;
-			font-weight: 600;
-			font-size: 0.9rem;
-			transition: 0.2s ease;
-			box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-		}
-		.btn-edit {
-			background-color: #ff92e2;
-			color: white;
-			margin-right: 8px;
-		}
-		.btn-edit:hover {
-			background-color: #ff6fd8;
-		}
-		.btn-delete {
-			background-color: #ff5f6d;
-			color: white;
-		}
-		.btn-delete:hover {
-			background-color: #ff3b4a;
-		}
-		.card-footer {
-			background: #fff;
-			text-align: center;
-			color: #777;
-			font-size: 0.9rem;
-			border-top: none;
-			padding: 0.75rem;
+			background-color: #f9f9f9;
+			cursor: pointer;
 		}
 		.search-form {
-			text-align: right;
-			margin-bottom: 1rem;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+			gap: 10px;
 		}
 		.search-form input {
-			border-radius: 20px;
-			padding: 0.5rem 1rem;
+			border-radius: 10px;
 		}
 		.search-form button {
-			border-radius: 20px;
-			background: linear-gradient(135deg, #c471f5, #fa71cd);
-			color: #fff;
-			font-weight: 500;
-			padding: 0.5rem 1rem;
+			border-radius: 10px;
+			background: linear-gradient(135deg, #6a5acd, #8a2be2);
+			color: white;
 			border: none;
-			margin-left: 5px;
+			padding: 0.5rem 1rem;
 		}
 	</style>
 </head>
 <body>
-<div class="container">
 
-	<h2>Welcome to Students Page</h2>
+<div class="card">
+	<h3>📋 Students List</h3>
 
-	<div class="search-form">
-		<form action="<?= site_url('author'); ?>" method="get" class="d-flex justify-content-end">
-			<?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
-			<input class="form-control me-2" name="q" type="text" placeholder="Search students..." value="<?= html_escape($q); ?>" style="max-width: 250px;">
-			<button type="submit" class="btn">Search</button>
-		</form>
-	</div>
+	<form action="<?= site_url('author'); ?>" method="get" class="search-form">
+		<?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
+		<input class="form-control" name="q" type="text" placeholder="Search students..." value="<?= html_escape($q); ?>">
+		<button type="submit">Search</button>
+	</form>
 
-	<div class="card">
-		<div class="table-responsive">
-			<table class="table table-hover align-middle mb-0">
-				<thead>
+	<div class="table-responsive">
+		<table class="table table-hover align-middle mb-0">
+			<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Birthdate</th>
+				<th>Added On</th>
+			</tr>
+			</thead>
+			<tbody>
+			<?php foreach (html_escape($all) as $author): ?>
 				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
-					<th>Birthdate</th>
-					<th>Added On</th>
-					<th>Action</th>
+					<td><?= $author['first_name']; ?></td>
+					<td><?= $author['last_name']; ?></td>
+					<td><?= $author['email']; ?></td>
+					<td><?= $author['birthdate']; ?></td>
+					<td><?= $author['added']; ?></td>
 				</tr>
-				</thead>
-				<tbody>
-				<?php foreach (html_escape($all) as $author): ?>
-					<tr>
-						<td><?= $author['first_name']; ?></td>
-						<td><?= $author['last_name']; ?></td>
-						<td><?= $author['email']; ?></td>
-						<td><?= $author['birthdate']; ?></td>
-						<td><?= $author['added']; ?></td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-			</table>
-		</div>
-		<div class="card-footer">
-			<?= $page; ?>
-		</div>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
 	</div>
 
+	<div class="text-end mt-3">
+		<?= $page; ?>
+	</div>
 </div>
+
 </body>
 </html>
