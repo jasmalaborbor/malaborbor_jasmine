@@ -89,6 +89,7 @@
 
     <div class="table-container">
         <div class="table-responsive">
+			<div class="col-md-6 d-flex justify-content-end"> <form action="<?= site_url('author'); ?>" method="get" class="d-flex w-100" style="max-width: 400px;"> <?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?> <input class="form-control me-2" name="q" type="text" placeholder="Search..." value="<?= html_escape($q); ?>"> <button type="submit" class="btn btn-primary">Search</button> </form>
             <table class="table table-borderless">
                 <thead>
                 <tr>
