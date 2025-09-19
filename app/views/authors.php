@@ -8,46 +8,63 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 	<style>
 		body {
-			background-color: #f1f4f9;
+			background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 			font-family: 'Inter', sans-serif;
+			min-height: 100vh;
 		}
 		.card {
 			border: none;
-			border-radius: 12px;
-			box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+			border-radius: 16px;
+			box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 			overflow: hidden;
+			background-color: #fff;
 		}
 		.card-header {
-			background: linear-gradient(135deg, #4edf97ff, #1c6e45ff);
+			background: linear-gradient(135deg, #667eea, #764ba2);
 			color: white;
 			font-weight: 600;
-			font-size: 1.2rem;
+			font-size: 1.3rem;
 			padding: 1rem 1.25rem;
+			letter-spacing: 0.5px;
 		}
 		.table thead {
-			background-color: lightgreen;
+			background-color: #e9efff;
 			font-weight: 600;
+			color: #4a4a4a;
 		}
 		.table-hover tbody tr:hover {
-			background-color: lightgreen;
+			background-color: #f1f5ff;
 			cursor: pointer;
 		}
 		.search-form {
 			background-color: #fff;
 			padding: 1rem 1rem 0.5rem 1rem;
-			border-radius: 12px;
-			box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+			border-radius: 16px;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 			margin-bottom: 1.5rem;
 		}
+		.search-form h3 {
+			font-weight: 600;
+			color: #333;
+		}
 		.search-form input {
-			border-radius: 8px;
+			border-radius: 10px;
+			border: 1px solid #ced4da;
 		}
 		.search-form button {
-			border-radius: 8px;
+			border-radius: 10px;
 			white-space: nowrap;
+			background: linear-gradient(135deg, #667eea, #764ba2);
+			border: none;
+			color: #fff;
+			font-weight: 500;
+			transition: 0.3s ease;
+		}
+		.search-form button:hover {
+			opacity: 0.9;
 		}
 		.card-footer {
-			background-color: #f8f9fa;
+			background-color: #f9f9fb;
 			font-size: 0.875rem;
 			color: #6c757d;
 		}
@@ -61,7 +78,7 @@
 		<form action="<?= site_url('author'); ?>" method="get" class="d-flex w-100" style="max-width: 400px;">
 			<?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
 			<input class="form-control me-2" name="q" type="text" placeholder="Search students..." value="<?= html_escape($q); ?>">
-			<button type="submit" class="btn btn-primary">Search</button>
+			<button type="submit" class="btn">Search</button>
 		</form>
 	</div>
 
@@ -72,7 +89,7 @@
 		<div class="card-body p-0">
 			<div class="table-responsive">
 				<table class="table table-hover align-middle mb-0">
-					<thead class="table-light">
+					<thead>
 					<tr>
 						<th>First Name</th>
 						<th>Last Name</th>
