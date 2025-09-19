@@ -18,18 +18,18 @@
 			overflow: hidden;
 		}
 		.card-header {
-			background: linear-gradient(135deg, #4e73df, #224abe);
+			background: linear-gradient(135deg, #4edf97ff, #1c6e45ff);
 			color: white;
 			font-weight: 600;
 			font-size: 1.2rem;
 			padding: 1rem 1.25rem;
 		}
 		.table thead {
-			background-color: #e9ecef;
+			background-color: lightgreen;
 			font-weight: 600;
 		}
 		.table-hover tbody tr:hover {
-			background-color: #f1f1f1;
+			background-color: lightgreen;
 			cursor: pointer;
 		}
 		.search-form {
@@ -57,7 +57,7 @@
 <div class="container py-4">
 
 	<div class="search-form d-flex flex-column flex-md-row justify-content-between align-items-center">
-		<h3 class="mb-3 mb-md-0">Student List</h3>
+		<h3 class="mb-3 mb-md-0">Students List</h3>
 		<form action="<?= site_url('author'); ?>" method="get" class="d-flex w-100" style="max-width: 400px;">
 			<?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
 			<input class="form-control me-2" name="q" type="text" placeholder="Search students..." value="<?= html_escape($q); ?>">
@@ -67,7 +67,7 @@
 
 	<div class="card">
 		<div class="card-header">
-			📋 Students Directory
+			Students List
 		</div>
 		<div class="card-body p-0">
 			<div class="table-responsive">
