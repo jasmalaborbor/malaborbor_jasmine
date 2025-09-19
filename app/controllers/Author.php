@@ -1,7 +1,7 @@
 <?php
 defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
- 
-class AuthorController extends Controller {
+
+class Author extends Controller {
 
     public function all() 
     {
@@ -18,7 +18,7 @@ class AuthorController extends Controller {
 
         $records_per_page = 10;
 
-        $all = $this->AuthorController->page($q, $records_per_page, $page);
+        $all = $this->author_model->page($q, $records_per_page, $page);
         $data['all'] = $all['records'];
         $total_rows = $all['total_rows'];
         $this->pagination->set_options([

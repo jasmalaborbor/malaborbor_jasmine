@@ -1,7 +1,7 @@
 <?php
     defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-    class author_model extends Model {
+    class Author_model extends Model {
         
         protected $table = '';
         protected $primary_key = 'id';
@@ -13,14 +13,17 @@
 
         public function page($q, $records_per_page = null, $page = null) {
             if (is_null($page)) {
-                return $this->db->table('users')->get_all();
+                return $this->db->table('authors')->get_all();
             } else {
-                $query = $this->db->table('users');
+                $query = $this->db->table('authors');
                 
                 // Build LIKE conditions
                 $query->like('id', '%'.$q.'%')
-                    ->or_like('username', '%'.$q.'%')
-                    ->or_like('email', '%'.$q.'%');
+                    ->or_like('first_name', '%'.$q.'%')
+                    ->or_like('last_name', '%'.$q.'%')
+                    ->or_like('birthdate', '%'.$q.'%')
+                    ->or_like('email', '%'.$q.'%')
+                    ->or_like('added', '%'.$q.'%');
 
                 // Clone before pagination
                 $countQuery = clone $query;
