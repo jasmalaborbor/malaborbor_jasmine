@@ -48,7 +48,7 @@ INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `a
 (5, 'Edmar', 'Cruzat', 'cruzat@gmail.com', '2010-04-10', '1986-01-27 22:40:04'),
 (6, 'John Clark', 'Culla', 'culla.@gmail.com', '1977-06-13', '1982-02-16 15:31:56'),
 (7, 'Ryu Angelo', 'Franque', 'franque@gmail.com', '1987-11-25', '1994-05-25 03:30:44'),
-(8, 'Joshane Angelie', 'Genabe', 'genabe@gmail.com', '1981-12-30', '2018-08-26 10:39:52'),
+(8, 'Joshane Angelie', 'Genabe', 'genabe@gmail.com', 'MCC2023-010801', '2018-08-26 10:39:52'),
 (9, 'Hazel Ann', 'Gutierrez', 'gutierrez@gmail.com', '2013-04-21', '2014-11-06 11:59:13'),
 (10, 'Jhon Vincent', 'hernandez', 'hernandez@gmail.com', '1976-12-21', '1972-11-11 23:24:03'),
 (11, 'Dan Mark', 'Iculla', 'iculla@gmail.com', '1984-06-19', '2009-01-07 00:45:45'),
