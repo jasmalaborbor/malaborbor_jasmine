@@ -3,7 +3,7 @@
 
     class Author_model extends Model {
         
-        protected $table = '';
+        protected $table = 'authors';
         protected $primary_key = 'id';
         
         public function __construct()
