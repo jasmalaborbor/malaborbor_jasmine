@@ -111,7 +111,7 @@ INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `a
 (68, 'Adolfo', 'Bins', 'leannon.wilburn@example.com', '1997-11-28', '2020-09-14 20:51:11'),
 (69, 'Nola', 'Spencer', 'axel88@example.com', '1998-01-24', '2000-09-10 04:29:09'),
 (70, 'Marie', 'Reichel', 'brent.jerde@example.org', '2012-12-03', '2020-03-15 13:59:17'),
-(71, 'Harmon', 'Nolan', 'ebert.joseph@example.com', '1980-03-15', '1986-03-01 00:35:15'),
+(71, 'King', 'Nolan', 'ebert.joseph@example.com', '1980-03-15', '1986-03-01 00:35:15'),
 (72, 'Holly', 'Steuber', 'theo.labadie@example.net', '2012-07-12', '2023-07-07 13:27:30'),
 (73, 'Zita', 'Strosin', 'nitzsche.garnet@example.net', '2001-07-15', '1999-05-05 19:28:00'),
 (74, 'Halie', 'Harris', 'frederique96@example.org', '1991-12-09', '2001-10-24 00:48:58'),
