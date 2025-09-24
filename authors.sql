@@ -130,17 +130,7 @@ INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `a
 (87, 'Shany', 'Ernser', 'lou73@example.org', '2008-04-01', '2003-07-28 06:11:57'),
 (88, 'Ulices', 'Cummings', 'jackson.orn@example.org', '1984-12-15', '1977-02-14 08:54:17'),
 (89, 'Quinton', 'Hyatt', 'lesch.rogelio@example.net', '1989-04-28', '2024-05-31 10:42:19'),
-(90, 'Chanelle', 'Nikolaus', 'nikko34@example.net', '1986-03-01', '1971-03-29 01:18:16'),
-(91, 'Watson', 'Wintheiser', 'grutherford@example.com', '1985-07-09', '1991-04-25 03:15:14'),
-(92, 'Eveline', 'Koss', 'cicero10@example.org', '2011-12-24', '1992-09-07 06:32:49'),
-(93, 'Rollin', 'Parisian', 'adalberto78@example.org', '2021-02-18', '1972-08-13 00:20:11'),
-(94, 'Madilyn', 'Feest', 'ukutch@example.com', '2000-03-02', '2002-03-23 03:01:24'),
-(95, 'Lacey', 'Haag', 'sschmeler@example.com', '1980-03-14', '2022-06-18 15:11:12'),
-(96, 'Fatima', 'Parker', 'sydnie.wehner@example.org', '1987-04-22', '1994-06-29 05:40:29'),
-(97, 'Raquel', 'Wilderman', 'gislason.estelle@example.net', '1980-04-18', '1990-07-24 02:40:06'),
-(98, 'Demetrius', 'Larson', 'raufderhar@example.net', '1977-11-02', '1981-11-23 10:52:05'),
-(99, 'Geovanni', 'Wolff', 'santina70@example.net', '2021-09-23', '1975-09-10 20:34:03'),
-(100, 'Camylle', 'Senger', 'margarette01@example.org', '2012-11-10', '2000-03-03 17:41:39');
+(90, 'Chanelle', 'Nikolaus', 'nikko34@example.net', '1986-03-01', '1971-03-29 01:18:16');
 
 --
 -- Indexes for dumped tables
