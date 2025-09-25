@@ -50,5 +50,6 @@ $router->get('/author/create', 'CreateAuthor::index');
 $router->post('/author/create', 'CreateAuthor::index');
 $router->get('/author/update/{id}', 'UpdateAuthor::index');
 $router->post('/author/update', 'UpdateAuthor::index');
+$router->get('/author/edit/{id}', 'UpdateAuthor::index');
 $router->get('/author/delete/{id}', 'DeleteAuthor::index');
 $router->post('/author/delete', 'DeleteAuthor::index');
