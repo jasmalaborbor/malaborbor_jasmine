@@ -650,6 +650,8 @@
                                             <i class="fas fa-circle" style="font-size: 0.5rem;"></i>
                                             Active
                                         </span>
+                                        <a href="<?= site_url('author/edit/' . $author['id']); ?>" class="btn btn-sm btn-warning ms-2">Edit</a>
+                                        <a href="<?= site_url('author/delete/' . $author['id']); ?>" class="btn btn-sm btn-danger ms-2" onclick="return confirm('Are you sure you want to delete this author?');">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -677,9 +679,9 @@
 
         <!-- Quick Actions Floating Button -->
         <div class="quick-actions">
-            <button class="fab-main" title="Quick Actions">
+            <a href="<?= site_url('author/create'); ?>" class="fab-main" title="Add Author">
                 <i class="fas fa-plus"></i>
-            </button>
+            </a>
         </div>
     </div>
 
