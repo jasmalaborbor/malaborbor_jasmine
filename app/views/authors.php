@@ -578,97 +578,21 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- Header Section -->
+        <!-- Search Section -->
         <div class="header-section glass-card">
             <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="page-title">
-                        <i class="fas fa-graduation-cap"></i>
-                        Student Analytics Hub
-                    </h1>
-                    <p class="page-subtitle">Advanced student management with real-time insights and analytics</p>
-                </div>
-                <div class="col-lg-5">
-                    <form action="<?= site_url('author'); ?>" method="get" class="d-flex justify-content-lg-end">
+                <div class="col-12">
+                    <form action="<?= site_url('author'); ?>" method="get" class="d-flex justify-content-center">
                         <?php $q = isset($_GET['q']) ? $_GET['q'] : ''; ?>
                         <div class="search-container">
                             <i class="fas fa-search search-icon"></i>
-                            <input class="search-input" name="q" type="text" placeholder="Search students, courses, or departments..." value="<?= html_escape($q); ?>">
+                            <input class="search-input" name="q" type="text" placeholder="Search students..." value="<?= html_escape($q); ?>">
                         </div>
                         <button type="submit" class="search-btn">
                             <i class="fas fa-search"></i>
                             Search
                         </button>
                     </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Statistics Section -->
-        <div class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card glass-card">
-                    <div class="stat-content">
-                        <div class="stat-icon primary">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>2,847</h3>
-                            <p>Total Students</p>
-                            <div class="stat-trend trend-up">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>+12.5% from last month</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glass-card">
-                    <div class="stat-content">
-                        <div class="stat-icon success">
-                            <i class="fas fa-user-check"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>2,651</h3>
-                            <p>Active Enrollments</p>
-                            <div class="stat-trend trend-up">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>+8.2% from last month</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glass-card">
-                    <div class="stat-content">
-                        <div class="stat-icon warning">
-                            <i class="fas fa-calendar-plus"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>89</h3>
-                            <p>New This Month</p>
-                            <div class="stat-trend trend-up">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>+23.1% from last month</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stat-card glass-card">
-                    <div class="stat-content">
-                        <div class="stat-icon info">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>94.2%</h3>
-                            <p>Retention Rate</p>
-                            <div class="stat-trend trend-up">
-                                <i class="fas fa-arrow-up"></i>
-                                <span>+2.1% from last month</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
