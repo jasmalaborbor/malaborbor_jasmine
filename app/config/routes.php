@@ -43,13 +43,21 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'Author::all');
-$router->get('/author', 'Author::all');
-// Author CRUD routes
-$router->get('/author/create', 'CreateAuthor::index');
-$router->post('/author/create', 'CreateAuthor::index');
-$router->get('/author/update/{id}', 'UpdateAuthor::index');
-$router->post('/author/update', 'UpdateAuthor::index');
-$router->get('/author/edit/{id}', 'UpdateAuthor::index');
-$router->get('/author/delete/{id}', 'DeleteAuthor::index');
-$router->post('/author/delete', 'DeleteAuthor::index');
+// Authentication routes
+$router->get('/auth/login', 'Auth::login');
+$router->post('/auth/login', 'Auth::login');
+$router->get('/auth/register', 'Auth::register');
+$router->post('/auth/register', 'Auth::register');
+$router->get('/auth/logout', 'Auth::logout');
+
+// Default route redirects to login
+$router->get('/', 'Auth::login');
+
+// Student routes (protected)
+$router->get('/author', 'Student::all');
+$router->get('/student/all', 'Student::all');
+$router->get('/student/create', 'Student::create');
+$router->post('/student/create', 'Student::create');
+$router->get('/student/edit/{id}', 'Student::edit');
+$router->post('/student/edit/{id}', 'Student::edit');
+$router->get('/student/delete/{id}', 'Student::delete');

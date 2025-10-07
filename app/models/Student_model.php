@@ -1,7 +1,7 @@
 <?php
     defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-    class Author_model extends Model {
+    class Student_model extends Model {
         
         protected $table = 'authors';
         protected $primary_key = 'id';
@@ -37,6 +37,31 @@
                 return $data;
             }
         }
+            // Create a new author record
+            public function create($data) {
+                return $this->db->table($this->table)->insert($data);
+            }
+
+            // Get a single author by primary key
+            public function get($id) {
+                return $this->db->table($this->table)
+                            ->where($this->primary_key, $id)
+                            ->get();
+            }
+
+            // Update an author record
+            public function update($id, $data) {
+                return $this->db->table($this->table)
+                            ->where($this->primary_key, $id)
+                            ->update($data);
+            }
+
+            // Delete an author record
+            public function delete($id) {
+                return $this->db->table($this->table)
+                            ->where($this->primary_key, $id)
+                            ->delete();
+            }
 
     }
 ?>
