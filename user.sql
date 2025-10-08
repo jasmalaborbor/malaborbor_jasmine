@@ -4,6 +4,7 @@ CREATE TABLE `user` (
   `username` varchar(50) NOT NULL UNIQUE,
   `email` varchar(100) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -11,5 +12,5 @@ CREATE TABLE `user` (
 
 -- Step 2: Insert the default admin user with properly hashed password
 -- Username: admin, Password: admin123
-INSERT INTO `user` (`username`, `email`, `password`, `created_at`, `updated_at`) VALUES 
-('admin', 'admin@example.com', '$2y$10$lLCpKshZHybh.dtHkdijlefPM/jNofrpgVCUrwjKfhwB6H/brnBB.', NOW(), NOW());
+INSERT INTO `user` (`username`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES 
+('admin', 'admin@example.com', '$2y$10$lLCpKshZHybh.dtHkdijlefPM/jNofrpgVCUrwjKfhwB6H/brnBB.', 'admin', NOW(), NOW());

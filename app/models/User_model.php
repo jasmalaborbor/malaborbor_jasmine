@@ -10,8 +10,27 @@ class User_model extends Model {
         parent::__construct();
     }
 
+    // Ensure 'role' column exists; add if missing and set default admin
+    public function ensure_role_column() {
+        try {
+            $check = $this->db->raw("SHOW COLUMNS FROM `{$this->table}` LIKE 'role'");
+            $exists = $check->fetch();
+            if (!$exists) {
+                // Add role column
+                $this->db->raw("ALTER TABLE `{$this->table}` ADD COLUMN `role` ENUM('admin','user') NOT NULL DEFAULT 'user' AFTER `password`");
+                // Ensure default admin stays admin if present
+                $this->db->raw("UPDATE `{$this->table}` SET `role`='admin' WHERE `username`='admin'");
+            }
+        } catch (Exception $e) {
+            // Silently ignore to avoid breaking requests if permissions are limited
+        }
+    }
+
     public function create($data) {
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        if (!isset($data['role']) || empty($data['role'])) {
+            $data['role'] = 'user';
+        }
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['updated_at'] = date('Y-m-d H:i:s');
         return $this->db->table($this->table)->insert($data);

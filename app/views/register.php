@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #e8f5e8;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d7efd7 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -16,34 +16,49 @@
             padding: 2rem 0;
         }
         .register-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #d6e9d6;
+            box-shadow: 0 16px 36px rgba(45, 90, 45, 0.15);
             padding: 2rem;
             width: 100%;
-            max-width: 450px;
+            max-width: 470px;
         }
         .register-title {
-            color: #2d5a2d;
-            font-weight: bold;
+            color: #245224;
+            font-weight: 800;
             font-size: 2rem;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .form-group {
             margin-bottom: 1.5rem;
             position: relative;
         }
         .form-control {
-            border: 2px solid #e9ecef;
+            border: 2px solid #e1f0e1;
             border-radius: 10px;
-            padding: 12px 15px 12px 45px;
+            padding: 12px 15px;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
+            background-color: #f7fbf7;
         }
         .form-control:focus {
             border-color: #2d5a2d;
-            box-shadow: 0 0 0 0.2rem rgba(45, 90, 45, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(45, 90, 45, 0.2);
+            background-color: #ffffff;
+        }
+        .form-select {
+            border: 2px solid #e1f0e1;
+            border-radius: 10px;
+            padding: 10px 12px;
+            background-color: #f7fbf7;
+            transition: all 0.25s ease;
+        }
+        .form-select:focus {
+            border-color: #2d5a2d;
+            box-shadow: 0 0 0 0.2rem rgba(45, 90, 45, 0.2);
+            background-color: #ffffff;
         }
         .input-icon {
             position: absolute;
@@ -62,14 +77,14 @@
             font-weight: 600;
             color: white;
             width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(45, 90, 45, 0.3);
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 16px rgba(45, 90, 45, 0.35);
         }
         .btn-register:hover {
-            background-color: #1e3f1e;
+            background-color: #244a24;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(45, 90, 45, 0.4);
-            color: white;
+            box-shadow: 0 8px 22px rgba(45, 90, 45, 0.45);
+            color: #ffffff;
         }
         .login-link {
             text-align: center;
@@ -82,12 +97,13 @@
             font-weight: 600;
         }
         .login-link a:hover {
-            color: #1e3f1e;
+            color: #244a24;
             text-decoration: underline;
         }
         .alert {
             border-radius: 10px;
             margin-bottom: 1rem;
+            border: 1px solid #d6e9d6;
         }
     </style>
 </head>
@@ -111,24 +127,39 @@
 
         <form action="<?= site_url('auth/register'); ?>" method="post">
             <div class="form-group">
-                <span class="input-icon">👤</span>
+                <label class="form-label">Role</label>
+                <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                    <select class="form-select" name="role" required>
+                        <option value="" selected disabled>Select</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                <?php else: ?>
+                    <select class="form-select" name="role" disabled>
+                        <option value="" selected disabled>Select</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <input type="hidden" name="role" value="user">
+                <?php endif; ?>
+            </div>
+            <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="Username" required>
             </div>
             
             <div class="form-group">
-                <span class="input-icon">📧</span>
                 <input type="email" class="form-control" name="email" placeholder="Email" required>
             </div>
             
             <div class="form-group">
-                <span class="input-icon">🔒</span>
                 <input type="password" class="form-control" name="password" placeholder="Password" required>
             </div>
             
             <div class="form-group">
-                <span class="input-icon">🔒</span>
                 <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required>
             </div>
+
+            
             
             <button type="submit" class="btn btn-register">Register</button>
         </form>
