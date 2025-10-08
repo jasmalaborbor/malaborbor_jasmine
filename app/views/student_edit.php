@@ -1,29 +1,31 @@
 <?php require_once __DIR__ . '/_head.php'; ?>
 
-<div class="card">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-    <h2 class="grad-1" style="margin:0"><i class="fas fa-user-edit"></i> Edit User</h2>
-    <div style="margin-left:auto">
-      <a href="<?= site_url('author'); ?>" class="btn"> <i class="fas fa-arrow-left"></i> Back</a>
+  <div class="container py-4">
+    <div class="form-container">
+      <div class="header-section">
+        <h1 class="page-title">Edit User</h1>
+        <a href="<?= site_url('auth/logout'); ?>" class="logout-btn">Logout</a>
+      </div>
+
+      <form method="post" action="">
+        <div class="mb-4">
+          <label for="first_name" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" value="<?= html_escape($student['first_name']); ?>" required />
+        </div>
+        <div class="mb-4">
+          <label for="last_name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="<?= html_escape($student['last_name']); ?>" required />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" value="<?= html_escape($student['email']); ?>" required />
+        </div>
+        <div class="d-flex gap-3">
+          <button type="submit" class="btn btn-update">Update User</button>
+          <a href="<?= site_url('author'); ?>" class="btn btn-cancel">Cancel</a>
+        </div>
+      </form>
     </div>
   </div>
-
-  <div class="card">
-    <form method="post" action="">
-      <input type="hidden" name="id" value="<?= html_escape($student['id']); ?>">
-      <div class="form-row">
-        <input class="input" type="text" id="first_name" name="first_name" placeholder="First name" value="<?= html_escape($student['first_name']); ?>" required>
-        <input class="input" type="text" id="last_name" name="last_name" placeholder="Last name" value="<?= html_escape($student['last_name']); ?>" required>
-      </div>
-      <div style="margin-top:12px">
-        <input class="input" type="email" id="email" name="email" placeholder="Email" value="<?= html_escape($student['email']); ?>" required>
-      </div>
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Update</button>
-        <a href="<?= site_url('author'); ?>" class="btn">Cancel</a>
-      </div>
-    </form>
-  </div>
-</div>
 
 <?php require_once __DIR__ . '/_footer.php'; ?>

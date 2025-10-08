@@ -16,33 +16,28 @@
         .alert { border-radius: 10px; }
     </style>
     </head>
-<body>
-    <?php require_once __DIR__ . '/_head.php'; ?>
+<?php require_once __DIR__ . '/_head.php'; ?>
 
-    <div style="max-width:480px;margin:40px auto">
-      <div class="card">
-        <h2 class="grad-1"><i class="fas fa-unlock-alt"></i> Forgot Password</h2>
+<div style="max-width:480px;margin:40px auto">
+  <div class="card">
+    <h2 class="grad-1">Forgot Password</h2>
 
-        <?php if (isset($_SESSION['error'])): ?>
-          <div class="card" style="margin-top:12px;color:#b91c1c;background:#fff6f6;border-radius:8px;padding:10px"><?php echo html_escape($_SESSION['error']); unset($_SESSION['error']); ?></div>
-        <?php endif; ?>
+    <?php if (isset($_SESSION['error'])): ?>
+      <div class="card" style="margin-top:12px;color:#b91c1c;background:#fff6f6;border-radius:8px;padding:10px"><?php echo html_escape($_SESSION['error']); unset($_SESSION['error']); ?></div>
+    <?php endif; ?>
 
-        <?php if (isset($_SESSION['success'])): ?>
-          <div class="card" style="margin-top:12px;color:#065f46;background:#ecfdf5;border-radius:8px;padding:10px"><?php echo html_escape($_SESSION['success']); unset($_SESSION['success']); ?></div>
-        <?php endif; ?>
+    <?php if (isset($_SESSION['success'])): ?>
+      <div class="card" style="margin-top:12px;color:#065f46;background:#ecfdf5;border-radius:8px;padding:10px"><?php echo html_escape($_SESSION['success']); unset($_SESSION['success']); ?></div>
+    <?php endif; ?>
 
-        <form action="<?= site_url('auth/forgot-password'); ?>" method="post" style="margin-top:12px">
-          <input class="input" type="email" name="email" placeholder="Enter your email" required>
-          <div style="margin-top:12px"><button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i> Send reset link</button></div>
-        </form>
+    <form action="<?= site_url('auth/forgot-password'); ?>" method="post" style="margin-top:12px">
+      <input class="input" type="email" name="email" placeholder="Enter your email" required>
+      <div style="margin-top:12px"><button class="btn btn-primary" type="submit">Send reset link</button></div>
+    </form>
 
-        <div style="margin-top:12px"><a href="<?= site_url('auth/login'); ?>" class="small"><i class="fas fa-arrow-left"></i> Back to login</a></div>
-      </div>
-    </div>
+    <div style="margin-top:12px"><a href="<?= site_url('auth/login'); ?>" class="small">Back to login</a></div>
+  </div>
+</div>
 
+<?php require_once __DIR__ . '/_footer.php'; ?>
     <?php require_once __DIR__ . '/_footer.php'; ?>
-
-
-        <form action="<?= site_url('auth/forgot-password'); ?>" method="post">
-
-            <div class="mb-3">
