@@ -47,6 +47,18 @@ select.input{padding:10px;border-radius:10px}
 
 /* Utilities */
 .grad-text{background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gradient-text {
+  background-image: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+.gradient-text.accent {
+  background-image: var(--grad-accent);
+}
 .icon{width:18px;height:18px;display:inline-block}
 
 /* Responsive tweaks */

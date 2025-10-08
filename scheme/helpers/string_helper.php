@@ -371,4 +371,23 @@ if ( ! function_exists('repeater'))
         return ($num > 0) ? str_repeat($data, $num) : '';
     }
 }
+
+    if ( ! function_exists('gradient_text'))
+    {
+        /**
+         * Gradient Text Helper
+         *
+         * Returns a safe HTML span with gradient text classes.
+         *
+         * @param string $text The text to render (will be escaped).
+         * @param string $extraClasses Additional CSS classes (optional).
+         * @return string HTML string (safe).
+         */
+        function gradient_text($text, $extraClasses = '')
+        {
+            $classes = trim('gradient-text ' . $extraClasses);
+            $safe = htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+            return '<span class="' . $classes . '">' . $safe . '</span>';
+        }
+    }
 ?>
