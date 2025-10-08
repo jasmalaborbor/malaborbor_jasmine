@@ -2,11 +2,7 @@
 
   <div class="container py-4">
     <div class="form-container">
-      <div class="header-section">
-        <h1 class="page-title">Create New User</h1>
-        <a href="<?= site_url('auth/logout'); ?>" class="logout-btn">Logout</a>
-      </div>
-
+      <h1 class="page-title">Create New User</h1>
       <form method="post" action="">
         <div class="mb-4">
           <label for="first_name" class="form-label">First Name</label>

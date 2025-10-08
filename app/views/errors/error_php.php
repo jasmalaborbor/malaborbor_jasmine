@@ -239,9 +239,7 @@ list($codeExcerpt, $excerptStart) = get_code_excerpt($filepath, $line);
         </div>
     </div>
 
-    <div class="footer">
-        LavaLust Framework – <?php echo date('Y'); ?> | PHP <?php echo phpversion(); ?>
-    </div>
+    
 </div>
 </body>
 </html>

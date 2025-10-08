@@ -1,11 +1,6 @@
 <?php require_once __DIR__ . '/_head.php'; ?>
 
 <div class="container">
-  <div class="header" style="background:var(--grad-1);color:#fff;padding:2rem;text-align:center;border-radius:8px">
-    <h1>Welcome to LavaLust</h1>
-    <p>Lightweight • Fast • MVC for PHP Developers</p>
-  </div>
-
   <div class="main" style="margin-top:16px">
     <h2>What is LavaLust?</h2>
     <p><strong>LavaLust</strong> is a lightweight PHP framework that follows the MVC (Model–View–Controller) pattern. It's designed for developers who want a structured yet minimalistic PHP development experience.</p>
@@ -60,12 +55,6 @@ $router->get('/', 'Welcome::index');
     </code></pre>
   </div>
 
-  <div class="footer" style="margin-top:16px">
-    Page rendered in <strong><?php echo lava_instance()->performance->elapsed_time('lavalust'); ?></strong> seconds.
-    Memory usage: <?php echo lava_instance()->performance->memory_usage(); ?>.
-    <?php if(config_item('ENVIRONMENT') === 'development'): ?>
-      <br>LavaLust Version <strong><?php echo config_item('VERSION'); ?></strong>
-    <?php endif; ?>
   </div>
 </div>
 

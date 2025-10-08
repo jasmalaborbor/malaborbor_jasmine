@@ -18,7 +18,6 @@
         <?php endif; ?>
       </div>
       <div class="col-md-2 text-end">
-        <a href="<?= site_url('auth/logout'); ?>" class="logout-btn">Logout</a>
       </div>
     </div>
   </div>
