@@ -19,33 +19,29 @@
 <body>
     <div class="card-box">
         <h2 class="title">Reset Password</h2>
+<?php require_once __DIR__ . '/_head.php'; ?>
 
-        <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-danger" role="alert">
-                <?= html_escape($_SESSION['error']); ?>
-                <?php unset($_SESSION['error']); ?>
-            </div>
-        <?php endif; ?>
+<div style="max-width:480px;margin:40px auto">
+  <div class="card">
+    <h2 class="grad-1"><i class="fas fa-key"></i> Reset Password</h2>
 
-        <form action="<?= site_url('auth/reset-password/' . html_escape($token)); ?>" method="post">
-            <div class="mb-3">
-                <label class="form-label">New password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter new password" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Confirm password</label>
-                <input type="password" name="confirm_password" class="form-control" placeholder="Confirm new password" required>
-            </div>
-            <button type="submit" class="btn btn-submit">Reset password</button>
-        </form>
+    <?php if (isset($_SESSION['error'])): ?>
+      <div class="card" style="margin-top:12px;color:#b91c1c;background:#fff6f6;border-radius:8px;padding:10px"><?php echo html_escape($_SESSION['error']); unset($_SESSION['error']); ?></div>
+    <?php endif; ?>
 
-        <div class="back-link">
+    <form action="<?= site_url('auth/reset-password/' . html_escape($token)); ?>" method="post" style="margin-top:12px">
+      <input class="input" type="password" name="password" placeholder="New password" required>
+      <input class="input" type="password" name="confirm_password" placeholder="Confirm password" required style="margin-top:8px">
+      <div style="margin-top:12px"><button class="btn btn-primary" type="submit"><i class="fas fa-check"></i> Reset password</button></div>
+    </form>
+
+    <div style="margin-top:12px"><a href="<?= site_url('auth/login'); ?>" class="small"><i class="fas fa-arrow-left"></i> Back to login</a></div>
+  </div>
+</div>
+
+<?php require_once __DIR__ . '/_footer.php'; ?>
             <a href="<?= site_url('auth/login'); ?>">Back to login</a>
+
         </div>
+
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
-
