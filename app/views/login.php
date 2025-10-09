@@ -71,7 +71,7 @@
     }
 
     .btn-login {
-      background: linear-gradient(to right, #43A047, #66BB6A);
+      background: linear-gradient(to right, #ded962ff, #bb9c66ff);
       color: #fff;
       border: none;
       border-radius: 12px;
@@ -92,18 +92,18 @@
     .register-link {
       text-align: center;
       margin-top: 1rem;
-      color: #555;
+      color: #e52f63ff;
     }
 
     .register-link a {
-      color: #2E7D32;
+      color: #db2675ff;
       font-weight: 600;
       text-decoration: none;
     }
 
     .register-link a:hover {
       text-decoration: underline;
-      color: #1B5E20;
+      color: #d73568ff;
     }
 
     .alert {
