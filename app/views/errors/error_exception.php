@@ -296,7 +296,9 @@ list($codeExcerpt, $excerptStart) = get_code_excerpt($exception->getFile(), $exc
         </div>
     </div>
 
-    
+    <div class="footer">
+        LavaLust Framework – <?php echo date('Y'); ?> | PHP <?php echo phpversion(); ?>
+    </div>
 </div>
 
 <script>
