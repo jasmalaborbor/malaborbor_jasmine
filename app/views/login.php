@@ -7,30 +7,46 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to right, #E8F5E9, #C8E6C9);
+      background: linear-gradient(135deg, #A8E6CF, #DCEDC1, #FFD3B6, #FFAAA5);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .login-card {
-      background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid #C8E6C9;
-      box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
-      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
       width: 100%;
       max-width: 420px;
+      transition: 0.3s;
+    }
+
+    .login-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     }
 
     .login-title {
-      color: #2E7D32;
-      font-weight: 700;
-      font-size: 2rem;
+      background: linear-gradient(to right, #2E7D32, #66BB6A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
 
     .form-group {
@@ -39,36 +55,36 @@
 
     .form-control,
     .form-select {
-      border: 2px solid #A5D6A7;
-      border-radius: 10px;
-      background-color: #F1F8F1;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(232, 245, 233, 0.8);
       padding: 12px 15px;
       font-size: 1rem;
       transition: 0.3s;
+      box-shadow: inset 0 0 5px rgba(56, 142, 60, 0.1);
     }
 
     .form-control:focus,
     .form-select:focus {
-      border-color: #388E3C;
       background-color: #ffffff;
-      box-shadow: 0 0 0 0.2rem rgba(56, 142, 60, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(56, 142, 60, 0.3);
     }
 
     .btn-login {
-      background-color: #388E3C;
+      background: linear-gradient(to right, #43A047, #66BB6A);
       color: #fff;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 12px;
       font-size: 1.1rem;
       font-weight: 600;
       width: 100%;
-      box-shadow: 0 6px 18px rgba(56, 142, 60, 0.3);
+      box-shadow: 0 8px 20px rgba(56, 142, 60, 0.3);
       transition: all 0.25s ease;
     }
 
     .btn-login:hover {
-      background-color: #2E7D32;
+      background: linear-gradient(to right, #2E7D32, #388E3C);
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
     }
@@ -76,7 +92,7 @@
     .register-link {
       text-align: center;
       margin-top: 1rem;
-      color: #666;
+      color: #555;
     }
 
     .register-link a {
@@ -91,14 +107,14 @@
     }
 
     .alert {
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #C8E6C9;
     }
   </style>
 </head>
 <body>
   <div class="login-card">
-    <h2 class="login-title">Login</h2>
+    <h2 class="login-title">Welcome Back 🌿</h2>
 
     <?php if (isset($_SESSION['error'])): ?>
       <div class="alert alert-danger" role="alert">
@@ -133,7 +149,7 @@
     </div>
 
     <div class="register-link">
-      Don't have an account? <a href="<?= site_url('auth/register'); ?>">Register</a>
+      Don’t have an account? <a href="<?= site_url('auth/register'); ?>">Register</a>
     </div>
   </div>
 

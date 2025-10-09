@@ -5,152 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Profile View</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-  body {
-    background-color: #e8f5e8;
-    background-image: url('assets/images/minsu_logo-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px;
-    background-attachment: fixed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
 
-  .page-title {
-    color: #2d5a2d;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px #ffffff;
-  }
+  <style>
+    body {
+      background-color: #f6f2fb;
+      background-image: url('assets/images/minsu_logo-removebg-preview.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 280px;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4b3d60;
+    }
 
-  .create-btn {
-    background-color: #2d5a2d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
-    font-weight: 600;
-    transition: 0.3s ease;
-  }
+    .page-title {
+      color: #6c4ba5;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px #ffffff;
+    }
 
-  .create-btn:hover {
-    background-color: #1e3f1e;
-  }
+    .create-btn {
+      background-color: #8b6ccf;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
 
-  .profile-table {
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 20px;
-  }
+    .create-btn:hover {
+      background-color: #6d4db8;
+    }
 
-  .table {
-    width: 100%;
-    margin-bottom: 0;
-    border-collapse: collapse;
-  }
+    .profile-table {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      background-color: white;
+    }
 
-  /* ✅ Dark green header */
-  .table-header {
-    background-color: #145214; /* dark green */
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: 0.3s ease;
-  }
+    .table-header {
+      background-color: #8b6ccf;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 
-  .table-header th {
-    padding: 14px;
-    border: none;
-  }
+    .table-header th {
+      padding: 14px;
+      border: none;
+    }
 
-  .table-body tr:nth-child(odd) {
-    background-color: #dff2df; /* light green */
-  }
+    .table-body tr:nth-child(odd) {
+      background-color: #f3eefe;
+    }
 
-  .table-body tr:nth-child(even) {
-    background-color: white;
-  }
+    .table-body tr:nth-child(even) {
+      background-color: #ffffff;
+    }
 
-  /* ✅ Hover effect sa rows */
-  .table-body tr:hover {
-    background-color: #cde9cd !important;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
+    .table-body tr:hover {
+      background-color: #e4d9fa !important;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
 
-  .table-body td {
-    padding: 14px;
-    border: none;
-    color: #333;
-  }
+    .table-body td {
+      padding: 14px;
+      border: none;
+      color: #4b3d60;
+    }
 
-  .edit-btn {
-    background-color: #2d5a2d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 6px 16px;
-    font-weight: 600;
-    transition: 0.3s;
-  }
+    .edit-btn {
+      background-color: #8b6ccf;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-  .edit-btn:hover {
-    background-color: #1e3f1e;
-  }
+    .edit-btn:hover {
+      background-color: #6d4db8;
+    }
 
-  .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 6px 16px;
-    font-weight: 600;
-    transition: 0.3s;
-  }
+    .delete-btn {
+      background-color: #e57373;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-  .delete-btn:hover {
-    background-color: #c82333;
-  }
+    .delete-btn:hover {
+      background-color: #d9534f;
+    }
 
-  .logout-btn {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 8px;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
-  }
+    .logout-btn {
+      background-color: #e57373;
+      color: white;
+      border-radius: 8px;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
 
-  .logout-btn:hover {
-    background-color: #c82333;
-  }
+    .logout-btn:hover {
+      background-color: #d9534f;
+    }
 
-  .search-container {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-  }
+    .search-container {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
 
-  .search-btn {
-    background-color: #2d5a2d;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: 600;
-  }
+    .search-btn {
+      background-color: #8b6ccf;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+    }
 
-  .search-btn:hover {
-    background-color: #1e3f1e;
-  }
-</style>
-
+    .search-btn:hover {
+      background-color: #6d4db8;
+    }
+  </style>
 </head>
+
 <body>
 <div class="container py-4">
   <h1 class="page-title">Welcome to Profile View</h1>
