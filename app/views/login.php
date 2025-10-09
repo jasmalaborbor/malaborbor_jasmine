@@ -40,7 +40,7 @@
     }
 
     .login-title {
-      background: linear-gradient(to right, #2E7D32, #66BB6A);
+      background: linear-gradient(to right, #9ca019ff, #fad622ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
@@ -79,14 +79,14 @@
       font-size: 1.1rem;
       font-weight: 600;
       width: 100%;
-      box-shadow: 0 8px 20px rgba(56, 142, 60, 0.3);
+      box-shadow: 0 8px 20px rgba(198, 124, 64, 0.3);
       transition: all 0.25s ease;
     }
 
     .btn-login:hover {
-      background: linear-gradient(to right, #2E7D32, #388E3C);
+      background: linear-gradient(to right, #c09f4cff, #a28f4aff);
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
+      box-shadow: 0 10px 25px rgba(192, 129, 57, 0.4);
     }
 
     .register-link {
